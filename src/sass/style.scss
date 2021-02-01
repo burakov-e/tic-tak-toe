@@ -1,0 +1,136 @@
+@import 'nullstyle';
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+.header {
+  width: 100vw;
+  height: 100px;
+
+  overflow: hidden;
+
+  background-color: whitesmoke;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__title {
+    font: {
+      family: 'Luckiest Guy', cursive, Arial, sans-serif;
+      size: 3rem;
+    }
+    color: #2c2c77;
+  }
+}
+
+.main {
+  margin: 30px auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .field {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    &__cell {
+      width: 100px;
+      height: 100px;
+
+      background-color: whitesmoke;
+
+      -webkit-box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
+      -moz-box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
+      box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
+      border-radius: 5px;
+
+      position: relative;
+
+      &_win {
+        -webkit-transform: perspective(100px) translateZ(5px);
+        -moz-transform: perspective(100px) translateZ(5px);
+        -o-transform: perspective(100px) translateZ(5px);
+        -ms-transform: perspective(100px) translateZ(5px);
+        transform: perspective(100px) translateZ(5px);
+        background-color: #6bde6b;
+      }
+
+      &_active {
+        cursor: pointer;
+        transition: all .3s ease-in;
+
+        &:hover {
+          -webkit-transform: perspective(100px) translateZ(5px);
+          -moz-transform: perspective(100px) translateZ(5px);
+          -o-transform: perspective(100px) translateZ(5px);
+          -ms-transform: perspective(100px) translateZ(5px);
+          transform: perspective(100px) translateZ(5px);
+        }
+      }
+
+      &_tic::before,
+      &_tic::after {
+        content: '';
+
+        display: block;
+        width: 50px;
+        height: 8px;
+
+        background-color: grey;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      }
+
+      &_tic::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &_tic::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+
+      &_toe::before {
+        content: '';
+
+        display: block;
+        width: 50px;
+        height: 50px;
+
+        border: 8px solid gray;
+        border-radius: 50%;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  .score {
+    width: 320px;
+
+    margin-top: 30px;
+    padding: 15px;
+
+    border: 1px solid black;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &__player1, &__player2 {
+      width: 50px;
+      font-family: Arial, sans-serif;
+      border: 1px solid black;
+      padding: 5px;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}

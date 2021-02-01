@@ -1,0 +1,198 @@
+@charset "UTF-8";
+/*Обнуление*/
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a:focus,
+a:active,
+:focus,
+:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  line-height: 1;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.hide-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/*--------------------*/
+.header {
+  width: 100vw;
+  height: 100px;
+  overflow: hidden;
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__title {
+  font-family: "Luckiest Guy", cursive, Arial, sans-serif;
+  font-size: 3rem;
+  color: #2c2c77;
+}
+
+.main {
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main .field {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.main .field__cell {
+  width: 100px;
+  height: 100px;
+  background-color: whitesmoke;
+  -webkit-box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
+  box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
+  border-radius: 5px;
+  position: relative;
+}
+.main .field__cell_win {
+  -webkit-transform: perspective(100px) translateZ(5px);
+  -moz-transform: perspective(100px) translateZ(5px);
+  -o-transform: perspective(100px) translateZ(5px);
+  -ms-transform: perspective(100px) translateZ(5px);
+  transform: perspective(100px) translateZ(5px);
+  background-color: #6bde6b;
+}
+.main .field__cell_active {
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+.main .field__cell_active:hover {
+  -webkit-transform: perspective(100px) translateZ(5px);
+  -moz-transform: perspective(100px) translateZ(5px);
+  -o-transform: perspective(100px) translateZ(5px);
+  -ms-transform: perspective(100px) translateZ(5px);
+  transform: perspective(100px) translateZ(5px);
+}
+.main .field__cell_tic::before, .main .field__cell_tic::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 8px;
+  background-color: grey;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.main .field__cell_tic::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.main .field__cell_tic::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.main .field__cell_toe::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 8px solid gray;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.main .score {
+  width: 320px;
+  margin-top: 30px;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.main .score__player1, .main .score__player2 {
+  width: 50px;
+  font-family: Arial, sans-serif;
+  border: 1px solid black;
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/*# sourceMappingURL=style.css.map */
